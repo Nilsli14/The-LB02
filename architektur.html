@@ -1,10 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Architektur</title>
+  <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+          type="image/png"
+          href="architekturbilder/logo_.jpg"
+          sizes="32x32">
+
 </head>
 <body>
-$END$
+<header>
+    <div id="logo">
+        <a href="#">
+            <img src="architekturbilder/logo_.jpg" alt="Logo">
+        </a>
+    </div>
+    <ul>
+            <nav>
+                <a href="Kontakt.html">Kontakt</a>
+                <a href="ohana.html">Ohana</a>
+                <a href="architektur.html">Architektur</a>
+                <a href="index.html">Über uns</a>
+                <a href="wilkommen.html">Willkommen</a>
+
+            </nav>
+    </ul>
+
+</header>
+<main>
+    <h1>Architektur</h1>
+
+</main>
+<section class="Architekturbilder">
+
+    <div class="carousel" data-carousel>
+
+        <button class="carousel-button prev" data-carousel-button="prev">&#10094;</button>
+
+        <button class="carousel-button next" data-carousel-button="next">&#10095;</button>
+
+
+
+        <ul data-slides>
+
+            <li class="slide" data-active>
+
+                <img src="architekturbilder/bild7.jpg" alt="Haus">
+
+            </li>
+
+            <li class="slide">
+
+                <img src="architekturbilder/bild2.png" alt="Sony">
+
+            </li>
+
+            <li class="slide">
+
+                <img src="architekturbilder/bild3.jpg" alt="Canon">
+
+            </li>
+
+            <li class="slide">
+
+                <img src="architekturbilder/bild4.jpg" alt="Canon">
+
+            </li>
+
+            <li class="slide">
+
+                <img src="architekturbilder/bild3.png" alt="Canon">
+
+            </li>
+        </ul>
+
+    </div>
+
+</section>
+<script>
+
+    function openNav() {
+
+        document.getElementById("hamburgerNav").style.width = "100%";
+
+    }
+
+    function closeNav() {
+
+        document.getElementById("hamburgerNav").style.width = "0%";
+
+    }
+
+
+
+    const buttons = document.querySelectorAll("[data-carousel-button]")
+
+
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const offset = button.dataset.carouselButton === "next" ? 1 : -1
+
+            const slides = button
+
+                .closest("[data-carousel]")
+
+                .querySelector("[data-slides]")
+
+
+
+            const activeSlide = slides.querySelector("[data-active]")
+
+            let newIndex = [...slides.children].indexOf(activeSlide) + offset
+
+            if (newIndex < 0) newIndex = slides.children.length - 1
+
+            if (newIndex >= slides.children.length) newIndex = 0
+
+
+
+            slides.children[newIndex].dataset.active = true
+
+            delete activeSlide.dataset.active
+
+        })
+
+    })
+
+
+
+
+</script>
+
+<section class="Link1"> <h2>Möchtest du noch mehr über mein Projekt erfahren?</h2>
+    <a href="architekturbilder/Rauber_Evita_Modul265.pdf"><button type="button">Klicke hier drauf</button>
+</section>
+
+
+
+
+
+<main>
+<section class="siria">
+    <img class="rund1" src="architekturbilder/bild4.jpg" alt="placehold">
+    <img class="rund2" src="architekturbilder/bild3.jpg" alt="placehold">
+    <img class="rund3" src="architekturbilder/bild7.jpg" alt="placehold">
+    <img class="rund4" src="architekturbilder/bild9.png" alt="placehold">
+    <img class="rund5" src="architekturbilder/Bild6.png" alt="placehold">
+    <img class="rund6" src="architekturbilder/bild2.jpg" alt="placehold">
+</section>
+</main>
+<footer>
+    <address class="adresse">Bildungs Zentrum Zürichsee <br>8810 Horgen
+        <p class="copy right"> © 2022- Alle Rechte vorbehalten
+    </address>
+</footer>
 </body>
+</html>
 </html>
